@@ -1,6 +1,6 @@
 # Nuxeo go environment Base image based on a ubuntu precise image with all the dependencies needed
 #
-# VERSION               0.0.1
+# VERSION               0.1.0
 
 FROM       ubuntu:precise
 MAINTAINER Damien Metzler <dmetzler@nuxeo.com>
@@ -20,3 +20,4 @@ RUN tar -v -C /usr/local -xzf go1.2.1.src.tar.gz
 RUN cd /usr/local/go/src && ./make.bash --no-clean 2>&1
 
 RUN go get github.com/mattn/gom
+RUN cd /usr/local/go/src/github.com/mattn/gom/ && git checkout d629635bec31bbbcf879c726d994d01435760e36
